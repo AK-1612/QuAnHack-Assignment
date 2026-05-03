@@ -2,7 +2,7 @@
 
 An enterprise-grade, AI-driven travel assistant that transforms natural language WhatsApp conversations into structured travel leads and luxury itineraries.
 
-## 🚀 Overview
+## Overview
 
 This system provides a seamless bridge between travelers and travel agencies. Using **Google Gemini 1.5/2.0**, it parses conversational inputs, identifies travel parameters (destination, duration, budget, interests), and generates premium day-by-day itineraries—all delivered via **Twilio WhatsApp**.
 
@@ -13,14 +13,14 @@ This system provides a seamless bridge between travelers and travel agencies. Us
 - **Agency Dashboard**: A real-time, glassmorphic UI to monitor leads, budgets, and chat history.
 - **WhatsApp Optimization**: Automatically segments long itineraries to fit within WhatsApp's 1600-character limit.
 
-## 🛠️ Technology Stack
+## Technology Stack
 - **Backend**: FastAPI (Python 3.9+)
 - **AI**: Google Gemini (generative-ai SDK)
 - **Database**: SQLite (SQLAlchemy ORM)
 - **Messaging**: Twilio WhatsApp API
 - **Frontend**: Vanilla JS / Tailwind CSS (Glassmorphism design)
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 1. **Clone the Repository**
    ```bash
@@ -47,15 +47,12 @@ This system provides a seamless bridge between travelers and travel agencies. Us
    python3 -m uvicorn src.main:app --reload
    ```
 
-## 📊 Dashboard
+## Dashboard
 Access the agency dashboard by opening `dashboard/index.html` in any modern web browser. The dashboard connects to the local API on port 8000 and refreshes every 30 seconds.
 
-## 🏗️ Architecture
+## Architecture
 - `src/api/`: FastAPI routers and endpoints.
 - `src/handlers/`: Core business logic and message orchestration.
 - `src/services/`: Specialized services for AI parsing and generation.
 - `src/llm/`: LLM client wrappers with resilience logic.
 - `src/models/`: SQLAlchemy database models.
-
----
-*Developed for the AI Travel Hackathon.*
