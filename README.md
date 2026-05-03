@@ -1,4 +1,4 @@
-# AI Travel Itinerary Assistant
+# Travel Agencies - An AI-powered Travel Itinerary Assistant
 
 An enterprise-grade, AI-driven travel assistant that transforms natural language WhatsApp conversations into structured travel leads and luxury itineraries.
 
