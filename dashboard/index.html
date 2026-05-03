@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Assistant | Agency Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0f172a] text-white font-['Outfit'] min-h-screen">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-[#1e293b] border-r border-slate-700 h-screen sticky top-0 p-6">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent mb-10">
+                TravelAI
+            </h1>
+            <nav class="space-y-4">
+                <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-600/30">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <span>Leads</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 text-slate-400 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 text-slate-400 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <header class="flex justify-between items-center mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold">Leads Management</h2>
+                    <p class="text-slate-400">Manage and follow up with your AI-captured travel leads.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold transition">
+                        Export CSV
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl backdrop-blur-xl">
+                    <p class="text-slate-400 text-sm">Total Leads</p>
+                    <p class="text-3xl font-bold" id="stat-total">0</p>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl backdrop-blur-xl">
+                    <p class="text-slate-400 text-sm">Qualified</p>
+                    <p class="text-3xl font-bold text-emerald-400" id="stat-qualified">0</p>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl backdrop-blur-xl">
+                    <p class="text-slate-400 text-sm">Avg. Budget</p>
+                    <p class="text-3xl font-bold text-blue-400" id="stat-budget">$0</p>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl backdrop-blur-xl">
+                    <p class="text-slate-400 text-sm">Active Chats</p>
+                    <p class="text-3xl font-bold text-amber-400" id="stat-active">0</p>
+                </div>
+            </div>
+
+            <!-- Leads Table -->
+            <div class="bg-slate-800/30 border border-slate-700 rounded-2xl overflow-hidden backdrop-blur-md">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-800/50 border-b border-slate-700">
+                        <tr>
+                            <th class="p-4 font-semibold text-slate-300">Lead</th>
+                            <th class="p-4 font-semibold text-slate-300">Destination</th>
+                            <th class="p-4 font-semibold text-slate-300">Duration</th>
+                            <th class="p-4 font-semibold text-slate-300">Budget</th>
+                            <th class="p-4 font-semibold text-slate-300">Status</th>
+                            <th class="p-4 font-semibold text-slate-300">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leads-table-body">
+                        <!-- Leads will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Lead Detail Modal -->
+    <div id="lead-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="bg-[#1e293b] border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+            <div class="p-6 border-b border-slate-700 flex justify-between items-center">
+                <h3 class="text-2xl font-bold" id="modal-title">Lead Details</h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1 grid grid-cols-2 gap-8">
+                <!-- Content injected via JS -->
+                <div id="modal-left"></div>
+                <div id="modal-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
